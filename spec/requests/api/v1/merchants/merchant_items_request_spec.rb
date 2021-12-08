@@ -4,19 +4,25 @@ describe "Merchant Items API endpoints" do
   it "sends a list of a merchant's items" do
     merchant_1 = create(:merchant)
     item_1 = create(:item, merchant: merchant_1)
-    get '/api/v1/merchants'
+    item_2 = create(:item, merchant: merchant_1)
+
+    get "/api/v1/merchants/#{merchant_1.id}/items"
 
     expect(response).to be_successful
 
-    merchants = JSON.parse(response.body, symbolize_names: true)
+    merchant_items = JSON.parse(response.body, symbolize_names: true)
 
-    expect(merchants[:data].count).to eq(10)
-
-    merchants[:data].each do |merchant|
-      expect(merchant[:attributes]).to have_key(:id)
-      expect(merchant[:attributes][:id]).to be_an(Integer)
-      expect(merchant[:attributes]).to have_key(:name)
-      expect(merchant[:attributes][:name]).to be_a(String)
+    merchant_items[:data].each do |item|
+      expect(item[:attributes]).to have_key(:id)
+      expect(item[:attributes][:id]).to be_an(Integer)
+      expect(item[:attributes]).to have_key(:name)
+      expect(item[:attributes][:name]).to be_a(String)
+      expect(item[:attributes]).to have_key(:description)
+      expect(item[:attributes][:description]).to be_a(String)
+      expect(item[:attributes]).to have_key(:unit_price)
+      expect(item[:attributes][:unit_price]).to be_a(Float)
+      expect(item[:attributes]).to have_key(:merchant_id)
+      expect(item[:attributes][:merchant_id]).to be_an(Integer)
     end
   end
 end

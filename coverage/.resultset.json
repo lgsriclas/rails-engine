@@ -23,19 +23,22 @@
           null
         ]
       },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+      "/Users/lesleysanders/turing/3module/rails-engine/app/models/item.rb": {
         "lines": [
           1,
           1,
           1,
-          null,
-          null,
-          1,
-          2,
           1,
           null,
           1,
-          null,
+          null
+        ]
+      },
+      "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/api/v1/merchants/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -43,6 +46,20 @@
       "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/lesleysanders/turing/3module/rails-engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
           null
         ]
       },
@@ -66,28 +83,20 @@
           null
         ]
       },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/serializers/item_serializer.rb": {
+      "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
           1,
           1,
           null,
+          null,
+          1,
+          2,
           1,
           null,
           1,
-          0,
           null,
-          null
-        ]
-      },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/models/item.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
           null,
-          1,
           null
         ]
       },
@@ -130,6 +139,6 @@
         }
       }
     },
-    "timestamp": 1638994296
+    "timestamp": 1638996740
   }
 }
