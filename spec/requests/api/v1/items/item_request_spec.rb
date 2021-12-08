@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Merchant API endpoints" do
+describe "Item API endpoints" do
   it "can get one item by its id" do
     merchant_1 = create(:merchant)
     item_1 = create(:item, merchant: merchant_1)

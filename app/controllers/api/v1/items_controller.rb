@@ -10,4 +10,13 @@ class Api::V1::ItemsController < ApplicationController
       render json: ItemSerializer.item_not_found, status: 404
     end
   end
+
+  def create
+    render json: ItemSerializer.create(item_params)
+  end 
+
+  private
+  def item_params
+    params.require(:item).permit(:name, :description, :unit_price, :merchant_id)
+  end
 end
