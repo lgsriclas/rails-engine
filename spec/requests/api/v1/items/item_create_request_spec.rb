@@ -23,7 +23,7 @@ describe "Item Create API endpoints" do
     expect(new_item.name).to eq("Purple Sparkle Leggings")
     expect(new_item.description).to eq("Lounge in style!")
     expect(new_item.unit_price).to eq(20.00)
-    expect(new_item.merchant_id).to eq(item_params[:merchant_id])
+    expect(new_item.merchant_id).to eq(item_1[:merchant_id])
   end
 
   it "cannot create item if params are missing" do
@@ -41,5 +41,6 @@ describe "Item Create API endpoints" do
     post "/api/v1/items/", headers: header, params: JSON.generate(item_1)
 
     expect(response.status).to eq(404)
+    expect(Item.count).to eq(0)
   end
 end

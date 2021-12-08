@@ -10,6 +10,12 @@ class ItemSerializer
     }
   end
 
+  def self.not_created
+    {errors:
+        {details: 'Item was not created.'}
+    }
+  end
+
   attribute :active do
    true
   end

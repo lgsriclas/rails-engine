@@ -23,17 +23,6 @@
           null
         ]
       },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/models/item.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
       "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/api/v1/items_controller.rb": {
         "lines": [
           1,
@@ -50,18 +39,34 @@
           null,
           null,
           1,
-          0,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
           null,
           null,
           1,
           1,
-          0,
+          2,
           null,
           null
         ]
       },
       "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/lesleysanders/turing/3module/rails-engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
           1,
           null
         ]
@@ -81,7 +86,13 @@
           null,
           null,
           1,
-          5,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          6,
           null,
           null
         ]
@@ -175,6 +186,6 @@
         }
       }
     },
-    "timestamp": 1638999736
+    "timestamp": 1639000189
   }
 }
