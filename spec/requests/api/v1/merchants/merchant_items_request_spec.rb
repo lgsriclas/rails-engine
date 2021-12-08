@@ -13,8 +13,6 @@ describe "Merchant Items API endpoints" do
     merchant_items = JSON.parse(response.body, symbolize_names: true)
 
     merchant_items[:data].each do |item|
-      expect(item[:attributes]).to have_key(:id)
-      expect(item[:attributes][:id]).to be_an(Integer)
       expect(item[:attributes]).to have_key(:name)
       expect(item[:attributes][:name]).to be_a(String)
       expect(item[:attributes]).to have_key(:description)

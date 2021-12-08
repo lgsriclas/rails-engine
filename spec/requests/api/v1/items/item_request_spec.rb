@@ -12,8 +12,6 @@ describe "Item API endpoints" do
 
     item = JSON.parse(response.body, symbolize_names: true)
 
-    expect(item[:data][:attributes]).to have_key(:id)
-    expect(item[:data][:attributes][:id]).to be_an(Integer)
     expect(item[:data][:attributes]).to have_key(:name)
     expect(item[:data][:attributes][:name]).to be_a(String)
     expect(item[:data][:attributes]).to have_key(:description)

@@ -20,6 +20,15 @@ class Api::V1::ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    if item.delete
+      render json: item.delete, status: 200
+    else
+      render status: 404
+    end 
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :unit_price, :merchant_id)
