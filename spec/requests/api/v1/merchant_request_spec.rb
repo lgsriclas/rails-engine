@@ -3,7 +3,6 @@ require 'rails_helper'
 describe "Merchant API endpoints" do
   it "can get one merchant by its id" do
     create_list(:merchant, 10)
-
     get "/api/v1/merchants/#{Merchant.first.id}"
 
     expect(response).to be_successful
