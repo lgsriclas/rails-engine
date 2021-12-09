@@ -42,7 +42,7 @@ class Api::V1::ItemsController < ApplicationController
     # end
     item = Item.find(params[:id])
     if item.update(item_params)
-      render json: ItemSerializer.new(@item).serializable_hash, status: :ok
+      render json: ItemSerializer.new(@item).serializable_hash, status: 200
     else
       render json: ItemSerializer.not_updated, status: 404
     end
