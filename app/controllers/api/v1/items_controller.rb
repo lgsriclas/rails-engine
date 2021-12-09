@@ -1,4 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: ItemSerializer.new(Item.all)
   end
@@ -14,7 +16,7 @@ class Api::V1::ItemsController < ApplicationController
   def create
     item = Item.new(item_params)
     if item.save
-      render json: ItemSerializer.new(item), status: 200
+      render json: ItemSerializer.new(item), status: 201
     else
       render json: {errors: {details: "Item not created."}}, status: 404
     end
@@ -22,15 +24,11 @@ class Api::V1::ItemsController < ApplicationController
 
   def destroy
     item = Item.find(params[:id])
-    if item.delete
-      render json: item.delete, status: 200
-    else
-      render json: {errors: {details: "Item not deleted."}}, status: 404
-    end
+    item.delete
+    render json: item.delete, status: 204
   end
 
   def update
-
     # def update
     # item = Item.find(params[:id])
     # if item.update(item_params)

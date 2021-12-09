@@ -13,6 +13,6 @@ class Item < ApplicationRecord
 
   def self.find_one_item(name)
     # Item.all.where("name ILIKE ?", "%#{name}").order(:name).limit(1)
-    Item.all.where("name iLIKE :search", search: "%#{name}%").order(:name).limit(1)
+    where("name iLIKE :search", search: "%#{name}%").order(:name).limit(1)
   end
 end
