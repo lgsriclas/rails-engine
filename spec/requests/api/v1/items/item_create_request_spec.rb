@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Item Create API endpoints" do
+describe "Item Create API endpoint" do
   it "can create an item" do
     merchant_1 = create(:merchant)
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Item Delte API endpoints" do
+describe "Item Delte API endpoint" do
   it "can delete an item" do
     merchant_1 = create(:merchant)
     item_1 = create(:item, merchant: merchant_1)

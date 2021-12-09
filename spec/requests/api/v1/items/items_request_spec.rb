@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Items API endpoints" do
+describe "Items API endpoint" do
   it "sends a list of items" do
     merchant_1 = create(:merchant)
     item_1 = create(:item, merchant: merchant_1)

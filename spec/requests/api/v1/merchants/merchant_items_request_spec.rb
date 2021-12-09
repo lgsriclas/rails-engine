@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Merchant Items API endpoints" do
+describe "Merchant Items API endpoint" do
   it "sends a list of a merchant's items" do
     merchant_1 = create(:merchant)
     item_1 = create(:item, merchant: merchant_1)
@@ -22,15 +22,15 @@ describe "Merchant Items API endpoints" do
       expect(item[:attributes]).to have_key(:merchant_id)
       expect(item[:attributes][:merchant_id]).to be_an(Integer)
     end
+  end
 
-    it 'sends error code if merchant does not exist' do
-      merchant_1 = create(:merchant)
-      item_1 = create(:item, merchant: merchant_1)
-      item_2 = create(:item, merchant: merchant_1)
+  it 'sends error code if merchant does not exist' do
+    merchant_1 = create(:merchant)
+    item_1 = create(:item, merchant: merchant_1)
+    item_2 = create(:item, merchant: merchant_1)
 
-      get "/api/v1/merchants/20/items"
+    get "/api/v1/merchants/20/items"
 
-      expect(response.status).to eq(404)
-    end
+    expect(response.status).to eq(404)
   end
 end
