@@ -3,6 +3,10 @@ class Api::V1::ItemsController < ApplicationController
     render json: ItemSerializer.new(Item.all)
   end
 
+  def find_item
+    @item = Item.find(params[:id])
+  end
+
   def show
     if Item.exists?(params[:id])
       render json: ItemSerializer.new(Item.find(params[:id]))
@@ -36,13 +40,18 @@ class Api::V1::ItemsController < ApplicationController
     # else
     #   render json: ItemSerializer.not_updated, status: 404
     # end
-
     item = Item.find(params[:id])
     if item.update(item_params)
-      render json: ItemSerializer.new(item)
+      render json: ItemSerializer.new(@item).serializable_hash, status: :ok
     else
       render json: ItemSerializer.not_updated, status: 404
     end
+    #
+    # if Item.exists?(params[:id])
+    #   render json: ItemSerializer.new(Item.update(item_params))
+    # else
+    #   render json: ItemSerializer.not_updated, status: 404
+    # end
   end
 
   private
