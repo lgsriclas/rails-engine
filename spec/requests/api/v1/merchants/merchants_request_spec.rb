@@ -12,8 +12,6 @@ describe "Merchants API endpoints" do
     expect(merchants[:data].count).to eq(10)
 
     merchants[:data].each do |merchant|
-      expect(merchant[:attributes]).to have_key(:id)
-      expect(merchant[:attributes][:id]).to be_an(Integer)
       expect(merchant[:attributes]).to have_key(:name)
       expect(merchant[:attributes][:name]).to be_a(String)
     end

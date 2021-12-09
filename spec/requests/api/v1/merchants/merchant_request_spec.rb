@@ -9,8 +9,6 @@ describe "Merchant API endpoints" do
 
     merchant = JSON.parse(response.body, symbolize_names: true)
 
-    expect(merchant[:data][:attributes]).to have_key(:id)
-    expect(merchant[:data][:attributes][:id]).to be_an(Integer)
     expect(merchant[:data][:attributes]).to have_key(:name)
     expect(merchant[:data][:attributes][:name]).to be_a(String)
   end

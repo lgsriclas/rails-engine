@@ -1,8 +1,6 @@
 class ItemSerializer
   include JSONAPI::Serializer
-  attributes :id, :name, :description, :unit_price, :merchant_id
-
-  belongs_to :merchant
+  attributes :name, :description, :unit_price, :merchant_id
 
   def self.item_not_found
     {errors:
@@ -10,7 +8,15 @@ class ItemSerializer
     }
   end
 
-  attribute :active do
-   true
+  def self.not_created
+    {errors:
+        {details: 'Item was not created.'}
+    }
+  end
+
+  def self.not_updated
+    {errors:
+        {details: 'Item was not updated.'}
+    }
   end
 end

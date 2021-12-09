@@ -23,6 +23,68 @@
           null
         ]
       },
+      "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/api/v1/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/lesleysanders/turing/3module/rails-engine/app/models/item.rb": {
         "lines": [
           1,
@@ -34,29 +96,6 @@
           null
         ]
       },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/api/v1/items_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/lesleysanders/turing/3module/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
           1,
@@ -64,15 +103,34 @@
           1,
           null,
           1,
-          null,
-          1,
-          0,
+          2,
           null,
           null,
           null,
           null,
           1,
-          4,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/lesleysanders/turing/3module/rails-engine/app/controllers/api/v1/items/merchant_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          1,
+          null,
+          1,
+          null,
           null,
           null
         ]
@@ -84,15 +142,9 @@
           1,
           null,
           1,
-          null,
-          1,
-          1,
+          2,
           null,
           null,
-          null,
-          null,
-          1,
-          11,
           null,
           null
         ]
@@ -101,10 +153,10 @@
         "lines": [
           1,
           1,
-          1,
+          2,
           1,
           null,
-          0,
+          1,
           null,
           null,
           null
@@ -166,6 +218,6 @@
         }
       }
     },
-    "timestamp": 1638997995
+    "timestamp": 1639018058
   }
 }

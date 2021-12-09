@@ -10,4 +10,43 @@ class Api::V1::ItemsController < ApplicationController
       render json: ItemSerializer.item_not_found, status: 404
     end
   end
+
+  def create
+    item = Item.new(item_params)
+    if item.save
+      render json: ItemSerializer.new(item), status: 200
+    else
+      render json: ItemSerializer.not_created, status: 404
+    end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    if item.delete
+      render json: item.delete, status: 200
+    else
+      render status: 404
+    end
+  end
+
+  def update
+    # item = Item.find(params[:id])
+    # if item.update(item_params)
+    #   render json: ItemSerializer.new(Item.update(params[:id], item_params))
+    # else
+    #   render json: ItemSerializer.not_updated, status: 404
+    # end
+
+    item = Item.find(params[:id])
+    if item.update(item_params)
+      render json: ItemSerializer.new(item)
+    else
+      render json: ItemSerializer.not_updated, status: 404
+    end
+  end
+
+  private
+  def item_params
+    params.require(:item).permit(:name, :description, :unit_price, :merchant_id)
+  end
 end
