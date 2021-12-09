@@ -5,11 +5,11 @@ describe "Item Create API endpoint" do
     merchant_1 = create(:merchant)
 
     item_1 = ({
-                    name: "Purple Sparkle Leggings",
-                    description: "Lounge in style!",
-                    unit_price: 20.00,
-                    merchant_id: merchant_1.id
-                  })
+                name: "Purple Sparkle Leggings",
+                description: "Lounge in style!",
+                unit_price: 20.00,
+                merchant_id: merchant_1.id
+              })
 
     header = {"CONTENT_TYPE" => "application/json"}
 

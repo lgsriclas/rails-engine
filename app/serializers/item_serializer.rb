@@ -13,4 +13,10 @@ class ItemSerializer
         {details: 'Item was not created.'}
     }
   end
+
+  def self.not_updated
+    {errors:
+        {details: 'Item was not updated.'}
+    }
+  end
 end
