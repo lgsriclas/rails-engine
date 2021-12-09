@@ -21,7 +21,7 @@ describe "Item's Merchant API endpoint" do
     item_1 = create(:item, merchant: merchant_1)
     item_2 = create(:item, merchant: merchant_1)
 
-    get "/api/v1/items/10/merchant"
+    get "/api/v1/items/100/merchant"
 
     expect(response.status).to eq(404)
   end
