@@ -7,7 +7,7 @@ class Api::V1::ItemsController < ApplicationController
     if Item.exists?(params[:id])
       render json: ItemSerializer.new(Item.find(params[:id]))
     else
-      render json: ItemSerializer.item_not_found, status: 404
+      render json: {errors: {details: "An item with this id does not exist"}}, status: 404
     end
   end
 
@@ -16,7 +16,7 @@ class Api::V1::ItemsController < ApplicationController
     if item.save
       render json: ItemSerializer.new(item), status: 200
     else
-      render json: ItemSerializer.not_created, status: 404
+      render json: {errors: {details: "Item not created."}}, status: 404
     end
   end
 
@@ -25,24 +25,26 @@ class Api::V1::ItemsController < ApplicationController
     if item.delete
       render json: item.delete, status: 200
     else
-      render status: 404
+      render json: {errors: {details: "Item not deleted."}}, status: 404
     end
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.update(item_params)
-      render json: ItemSerializer.new(Item.update(params[:id], item_params))
-    else
-      render json: ItemSerializer.not_updated, status: 404
-    end
 
+    # def update
     # item = Item.find(params[:id])
     # if item.update(item_params)
-    #   render json: ItemSerializer.new(@item).serializable_hash, status: 200
+    #   render json: ItemSerializer.new(Item.update(params[:id], item_params))
     # else
     #   render json: ItemSerializer.not_updated, status: 404
     # end
+
+    item = Item.find(params[:id])
+    if item.update(item_params)
+      render json: ItemSerializer.new(item).serializable_hash, status: 200
+    else
+      render json: {errors: {details: "Item not updated."}}, status: 404
+    end
 
 
     # if Item.exists?(params[:id])
