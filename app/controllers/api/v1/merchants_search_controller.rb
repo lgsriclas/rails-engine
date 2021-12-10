@@ -6,6 +6,10 @@ class Api::V1::MerchantsSearchController < ApplicationController
 
   def show
     search = Merchant.find_one_merchant(params[:name])
-    render json: MerchantSerializer.new(search)
+    if search != nil
+      render json: MerchantSerializer.new(search)
+    else
+      render json: {data: {}}
+    end
   end
 end

@@ -25,4 +25,10 @@ class ItemSerializer
   #       {details: 'Item not deleted'}
   #   }
   # end
+
+  # def self.name_and_price
+  #   {errors:
+  #       {details: 'Cannot search by name and price'}
+  #   }
+  # end
 end

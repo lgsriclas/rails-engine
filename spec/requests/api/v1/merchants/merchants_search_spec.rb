@@ -16,8 +16,24 @@ describe "Find Merchants" do
 
       expect(merchant).to be_a(Hash)
       expect(merchant).to have_key(:data)
-      expect(merchant[:data].first[:attributes]).to have_key(:name)
-      expect(merchant[:data].first[:attributes][:name]).to be_a(String)
+      expect(merchant[:data][:attributes]).to have_key(:name)
+      expect(merchant[:data][:attributes][:name]).to be_a(String)
+    end
+
+    it 'returns an empty object if search does not match any merchants' do
+      merchant_1 = Merchant.create!(name: "Sally's Silly Sandals")
+      merchant_2 = Merchant.create!(name: "Bobbi's Basic Banjos")
+
+      search = "owl"
+
+      get "/api/v1/merchants/find?name=#{search}"
+
+      expect(response).to be_successful
+
+      merchant = JSON.parse(response.body, symbolize_names: true)
+
+      expect(merchant).to have_key(:data)
+      expect(merchant[:data]).to eq({})
     end
   end
 
