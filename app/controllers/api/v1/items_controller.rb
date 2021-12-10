@@ -29,27 +29,12 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def update
-    # def update
-    # item = Item.find(params[:id])
-    # if item.update(item_params)
-    #   render json: ItemSerializer.new(Item.update(params[:id], item_params))
-    # else
-    #   render json: ItemSerializer.not_updated, status: 404
-    # end
-
     item = Item.find(params[:id])
     if item.update(item_params)
       render json: ItemSerializer.new(item).serializable_hash, status: 200
     else
       render json: {errors: {details: "Item not updated."}}, status: 404
     end
-
-
-    # if Item.exists?(params[:id])
-    #   render json: ItemSerializer.new(Item.update(item_params))
-    # else
-    #   render json: ItemSerializer.not_updated, status: 404
-    # end
   end
 
   private
