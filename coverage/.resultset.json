@@ -297,46 +297,8 @@
           null,
           null
         ]
-      },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/lesleysanders/turing/3module/rails-engine/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1639094508
+    "timestamp": 1639095029
   }
 }
